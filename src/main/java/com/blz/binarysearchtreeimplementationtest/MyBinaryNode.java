@@ -1,9 +1,14 @@
 package com.blz.binarysearchtreeimplementationtest;
 
-public class MyBinaryNode {
+public class MyBinaryNode<K extends Comparable<K>> {
+	
+	K key;
+	MyBinaryNode<K> left;
+	MyBinaryNode<K> right;
 
-	public static void main(String[] args) {
-		System.out.println("Welcome Message " );
+	public MyBinaryNode(K key) {
+		this.key = key;
+		this.left = null;
+		this.right = null;
 	}
-
 }
