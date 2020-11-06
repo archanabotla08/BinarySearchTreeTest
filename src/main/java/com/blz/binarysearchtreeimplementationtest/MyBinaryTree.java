@@ -1,7 +1,7 @@
 package com.blz.binarysearchtreeimplementationtest;
 
 public class MyBinaryTree<K extends Comparable<K>> {
-	private MyBinaryNode<K> root;
+	public MyBinaryNode<K> root;
 	
 	public void add(K key) {
 		this.root = this.addRecursively(root,key);
@@ -20,6 +20,22 @@ public class MyBinaryTree<K extends Comparable<K>> {
 		}
 		return current;
 	}
+	
+	public int searchRecursively(MyBinaryNode<K> current, int value){
+		if(current == null)
+			return 0;
+		if((int) current.key == value)
+			return value;
+		if( value < (int) current.key) {
+			return searchRecursively(current.left, value);
+		}else if( value > (int) current.key) {
+			return searchRecursively(current.right, value);
+		}
+		else {
+			return 1;
+		}
+	}
+	
 	
 	public int getSize() {
 		return this.getSizeRecursive(root);
